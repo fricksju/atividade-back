@@ -1,5 +1,5 @@
-const express = require("express");
-const verificarAutenticacao = require("./auth");
+import express from "express";
+import verificarAutenticacao from "./auth.js";
 
 const app = express();
 app.use(express.json());
@@ -18,12 +18,11 @@ app.get("/usuarios", (req, res) => {
   res.json(usuarios);
 });
 
-
 app.post("/usuarios", verificarAutenticacao, (req, res) => {
   res.status(201).json({ mensagem: "Rota permitida" });
 });
 
 
 app.listen(3000, () => {
-  console.log("Rodando na porta 3000");
+  console.log("Servidor rodando na porta 3000");
 });

@@ -1,4 +1,4 @@
-function verificarAutenticacao(req, res, next) {
+export default function verificarAutenticacao(req, res, next) {
   const { tipoUsuario } = req.body;
 
   if (tipoUsuario === "ADM") {
@@ -9,5 +9,3 @@ function verificarAutenticacao(req, res, next) {
     mensagem: "Funcao nao permitida para esse usuario"
   });
 }
-
-module.exports = verificarAutenticacao;
