@@ -1,7 +1,7 @@
 export  function verificarAutenticacao(req, res, next) {
   const { tipoUsuario } = req.body;
 
-  if (tipoUsuario === "admin") {
+  if (tipoUsuario === "adm") {
     return next(); 
   }
 
